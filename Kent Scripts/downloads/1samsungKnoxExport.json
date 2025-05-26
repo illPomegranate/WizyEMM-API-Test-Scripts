@@ -1,0 +1,10 @@
+{
+	"profileName": "test profile",
+	"kpePremiumLicenseKey": "test license",
+	"verboseMode": true,
+	"configCertificates": [
+		{
+			"configCertificateAlias": "cert testing"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"steps": [
+		{
+			"audioStep": {
+				"audioBestPathExcludeAction": "2"
+			},
+			"gmsStep": {
+				"gmsFeatureSet": "2"
+			},
+			"fotaStep": {
+				"fotaMode": "1"
+			}
+		}
+	]
+}

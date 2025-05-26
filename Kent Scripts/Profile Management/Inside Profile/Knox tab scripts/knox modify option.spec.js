@@ -42,18 +42,6 @@ test('Checking Tracks (Companion)', async ({page}) =>{
             }
         }
         
-        //const divs = await page.locator('#configuration-body').locator('div')
-        //const divCount = await divs.count()
-//
-        //for( let i = 0; i < divCount; i++){
-        //    const div = divs.nth(i)
-        //    const divName = await divs.getAttribute('class')
-//
-        //    if(divName && divName.includes("ant-collapse-item")){
-        //        await div.click()
-        //    }
-        //}
-
         
     })
 
