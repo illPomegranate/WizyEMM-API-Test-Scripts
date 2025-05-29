@@ -50,8 +50,7 @@ test('Change Profile & Change User', async ({ page }) => {
 
   //Click Change Profile - Adjust/Modify the Profile locator if its not responding
   await page.getByText('Change profile').click();
-  //await page.locator('#app').getByText('Change profile').click();
-  await page.getByText('-15-5-25-Test').click();
+  await page.getByText('000000-InternQATest').click();
   //OK - Change Profile
   const okChangeProfile = await payloadRequest(page, 'OK', '/api/v2/devices/');
   console.log('\nDevices has been updated')
