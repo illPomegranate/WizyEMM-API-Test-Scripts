@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { website } from '../../../utils/dataHelpers.js';
+import { website, loginResponse } from '../../../utils/dataHelpers.js';
 
 //Not yet updated code
 test('Change Profile & Change User', async ({ page }) => {
