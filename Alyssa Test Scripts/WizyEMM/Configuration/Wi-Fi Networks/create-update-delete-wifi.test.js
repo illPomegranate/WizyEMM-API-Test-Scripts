@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { website, loginResponse } from '../../../utils/dataHelpers.js';
 
 //Not yet updated code
-test('Change Profile & Change User', async ({ page }) => {
+test('Wi-fi Networks', async ({ page }) => {
   const wizyEMM = await website(page, 'https://qa2.staging-us.wizyemm.app/', 'WizyEMM Staging Website');
   expect(wizyEMM.status()).toBe(200);
   test.setTimeout(120000);
