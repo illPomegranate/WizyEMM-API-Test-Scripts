@@ -1,7 +1,7 @@
 //@ts-check
 import {expect, test} from '@playwright/test'
 
-test('Checking Tracks (Companion)', async ({page}) =>{
+test('Checking Configurations (Security Settings)', async ({page}) =>{
     function statusTexts(code)
     {
         //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator

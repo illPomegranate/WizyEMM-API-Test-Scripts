@@ -4,8 +4,8 @@ const path = require("path")
 
 test('Import Zebra Config', async ({page}) => {
 
-    console.log('Importing Zebra config')
-    await test.step('Navigate to Zebra section', async () => {
+    console.log('Importing Honeywell config scanpal ver')
+    await test.step('Navigate to Honeywell Scanpal section', async () => {
 
         await page.goto('/dashboard')
         await page.getByRole('link', { name: 'file-text Profile Management' }).click();
@@ -15,11 +15,13 @@ test('Import Zebra Config', async ({page}) => {
         await page.getByRole('textbox', { name: 'Filter by name' }).fill('kent');
         await page.getByRole('textbox', { name: 'Filter by name' }).press('Escape');
         await page.getByRole('link', { name: 'kent qa - Duplicate' }).click();
-        await page.getByRole('tab', { name: 'Zebra' }).click();
+        await page.getByRole('tab', { name: 'Honeywell' }).click();
+        await page.getByRole('tab', { name: 'Scanpal Devices' }).click();
+
     
     })
 
-    await test.step('Download Zebra Config', async () =>{
+    await test.step('Download Honeywell Scanpal Config', async () =>{
 
            try {
                page.on('response', response =>{
@@ -32,10 +34,10 @@ test('Import Zebra Config', async ({page}) => {
            
                //Download event
                const downloadPromise = page.waitForEvent('download');
-               await page.getByText('export').click();
+               await page.locator('//*[@id="rc-tabs-1-panel-com.honeywell.oemconfig.scanpal"]/div[2]/div/div[2]/div/div[2]/div/button[1]/a').click();
                const download = await downloadPromise;
            
-               const fileName = '\\WizyEMM-stuff\\downloads\\zebraExport.json'
+               const fileName = '\\WizyEMM-stuff\\downloads\\honeyWellScanpalExport.json'
                const filePath = path.join(process.cwd(), fileName)
                await download.saveAs(filePath);
            

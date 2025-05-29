@@ -12,7 +12,7 @@ test('Checking Tracks (Companion)', async ({page}) =>{
             'Unknown Status';
     }
 
-    await test.step('Navigate to the configuration section', async () => {
+    await test.step('Navigate to the Knox section', async () => {
 
         await page.goto('/dashboard')
         await page.getByRole('link', { name: 'file-text Profile Management' }).click();

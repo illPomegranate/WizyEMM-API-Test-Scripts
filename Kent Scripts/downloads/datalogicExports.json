@@ -1,0 +1,26 @@
+{
+	"applyDefaults": false,
+	"DockSettings": {
+		"firmwareUpdatePolicy": "FIRMWARE_UPDATE_POLICY_DISABLED",
+		"cradleUnlockNotificationPolicy": "UNLOCK_NOTIFICATION_SINGLE"
+	},
+	"securityGroup": {
+		"sdkGroup": {
+			"sdkReset": false
+		}
+	},
+	"PowerSettings": {
+		"externalPowerTimeout": "MINUTES_10",
+		"internalBatteryTimeout": "NEVER",
+		"BatterySaver": {
+			"batterySaverEnable": true,
+			"batterySaverAutoEnable": true
+		},
+		"WakeupSources": [
+			{
+				"wakeupSourceSelect": "TRIG_PTT",
+				"wakeupSourceEnable": true
+			}
+		]
+	}
+}

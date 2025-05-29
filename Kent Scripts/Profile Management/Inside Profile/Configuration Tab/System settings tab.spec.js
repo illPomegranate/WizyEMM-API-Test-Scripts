@@ -1,7 +1,7 @@
 //@ts-check
 import {expect, test} from '@playwright/test'
 
-test('Checking Tracks (Companion)', async ({page}) =>{
+test('Checking Configurations (System settings)', async ({page}) =>{
     function statusTexts(code)
     {
         //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
@@ -30,20 +30,23 @@ test('Checking Tracks (Companion)', async ({page}) =>{
         expect( await page.getByRole('tablist').filter({ hasText: 'System SettingsSecurity' })).toBeVisible()
 
         if(await checkValue.isChecked()){
-            console.log('Naka on')
+           // console.log('Naka on')
         } else{
-            console.log('Naka sarado')
+            //console.log('Naka sarado')
             await checkValue.check()
         }
 
+        //Location Settings
         await page.locator('span').filter({ hasText: 'Let the user choose' }).first().click();
         await page.getByText('Enforced', { exact: true }).click();
 
         await page.getByRole('listitem').filter({ hasText: 'Report device' }).getByRole('switch').click();
 
+        //Permission Management
         await page.locator('span').filter({ hasText: 'Grant' }).first().click();
         await page.locator('div').filter({ hasText: /^Prompt$/ }).nth(1).click();
 
+        //System and App Updates
         await page.locator('span').filter({ hasText: 'Unspecified' }).first().click();
         await page.locator('div').filter({ hasText: /^Postponed$/ }).nth(1).click();
 
@@ -91,7 +94,6 @@ test('Checking Tracks (Companion)', async ({page}) =>{
         await page.locator('span').filter({ hasText: 'Postponed' }).first().click();
         await page.getByText('Unspecified', { exact: true }).nth(1).click();
         
-        
         await page.getByRole('button', { name: 'right Freeze time period' }).click();
         await page.getByRole('button', { name: 'delete' }).click();
 
@@ -99,6 +101,5 @@ test('Checking Tracks (Companion)', async ({page}) =>{
         await page.getByTitle('Unspecified').locator('div').click();
 
         await page.getByRole('button', { name: 'save Save' }).click();
-
     })
 })

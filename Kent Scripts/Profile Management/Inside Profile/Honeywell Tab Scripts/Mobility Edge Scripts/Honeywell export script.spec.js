@@ -4,8 +4,8 @@ const path = require("path")
 
 test('Import Zebra Config', async ({page}) => {
 
-    console.log('Importing Zebra config')
-    await test.step('Navigate to Zebra section', async () => {
+    console.log('Importing Honeywell config')
+    await test.step('Navigate to Honeywell section', async () => {
 
         await page.goto('/dashboard')
         await page.getByRole('link', { name: 'file-text Profile Management' }).click();
@@ -15,11 +15,11 @@ test('Import Zebra Config', async ({page}) => {
         await page.getByRole('textbox', { name: 'Filter by name' }).fill('kent');
         await page.getByRole('textbox', { name: 'Filter by name' }).press('Escape');
         await page.getByRole('link', { name: 'kent qa - Duplicate' }).click();
-        await page.getByRole('tab', { name: 'Zebra' }).click();
+        await page.getByRole('tab', { name: 'Honeywell' }).click();
     
     })
 
-    await test.step('Download Zebra Config', async () =>{
+    await test.step('Download Honeywell Config', async () =>{
 
            try {
                page.on('response', response =>{
@@ -35,7 +35,7 @@ test('Import Zebra Config', async ({page}) => {
                await page.getByText('export').click();
                const download = await downloadPromise;
            
-               const fileName = '\\WizyEMM-stuff\\downloads\\zebraExport.json'
+               const fileName = '\\WizyEMM-stuff\\downloads\\honeyWellExport.json'
                const filePath = path.join(process.cwd(), fileName)
                await download.saveAs(filePath);
            

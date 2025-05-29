@@ -1,0 +1,8 @@
+{
+	"display_configuration": {
+		"display_adaptive_brightness": "true",
+		"display_screen_timeout": "1800000",
+		"show_rotation_suggestions": "1",
+		"font_size": "1.15"
+	}
+}

@@ -32,7 +32,8 @@ test('Datalogic Tab Search', async ({page}) => {
 
                 //Di tapos
                 //const items = await page.getByText(query)
-                //const itemNum = await items.count() 
+
+               // console.log(itemNum)
 
                 //console.log(`${query} count (times appeared):${itemNum}`)
             }

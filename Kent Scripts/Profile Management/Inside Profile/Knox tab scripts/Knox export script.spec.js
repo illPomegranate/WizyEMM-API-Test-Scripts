@@ -2,10 +2,10 @@
 import {test, expect} from '@playwright/test'
 const path = require("path")
 
-test('Import Knox Config', async ({page}) => {
+test('Export Knox Config', async ({page}) => {
 
-    console.log('Importing Knox preset Configuration')
-    await test.step('Navigate to the application section', async () => {
+    console.log('Exporting Knox preset Configuration')
+    await test.step('Navigate to the Knox section', async () => {
 
         await page.goto('/dashboard')
         await page.getByRole('link', { name: 'file-text Profile Management' }).click();

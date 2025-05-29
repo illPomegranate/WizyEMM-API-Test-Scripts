@@ -1,7 +1,7 @@
 //@ts-check
 import {expect, test} from '@playwright/test'
 
-test('Checking Tracks (Companion)', async ({page}) =>{
+test('Checking Configuration (Network Settings)', async ({page}) =>{
     function statusTexts(code)
     {
         //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
@@ -31,7 +31,7 @@ test('Checking Tracks (Companion)', async ({page}) =>{
         await page.getByRole('button', { name: 'plus Add' }).click();
         expect(await page.locator('div').filter({ hasText: /^Add Profile Wi-Fi Networks$/ }).first()).toBeVisible()
 
-        await page.waitForTimeout(3000)
+        await page.waitForTimeout(100)
         await page.getByRole('textbox', { name: 'Filter by name', exact: true }).fill('interns')
 
         await page.getByRole('row', { name: 'interns wifi1 interns wifi1 WEP-PSK', exact: true }).getByRole('cell').first().getByRole('checkbox').check()
@@ -62,12 +62,11 @@ test('Checking Tracks (Companion)', async ({page}) =>{
     })
 
     await test.step('Revert Settings ', async () =>{
-        await page.getByRole('tab', { name: 'Network Settings' }).click();
+       await page.getByRole('tab', { name: 'Network Settings' }).click();
 
        await page.locator('tbody').getByRole('cell').filter({ hasText: /^$/ }).getByRole('checkbox').check()
        await page.getByRole('button', { name: 'Remove' }).click()
        await page.getByRole('button', { name: 'Yes' }).click();
-
 
        await page.getByRole('listitem').filter({ hasText: 'VPN AppCompanion' }).locator('svg').nth(1).click()
        await page.getByRole('button', { name: 'save Save' }).click();

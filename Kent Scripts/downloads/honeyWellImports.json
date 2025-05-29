@@ -1,0 +1,17 @@
+{
+	"multiple_files_download_settings": {
+		"multiple_file_download_config": [
+			{
+				"m_prevent_repeat_of_download": "true"
+			}
+		]
+	},
+	"application_configuration": {
+		"dev_opintel_settings": {
+			"agent_connect_direct": "true"
+		}
+	},
+	"display_configuration": {
+		"display_adaptive_brightness": "true"
+	}
+}

@@ -1,8 +1,6 @@
 //@ts-check
 import {test, expect} from '@playwright/test'
 test.setTimeout(300000)
-/* NOTE remove comment nalang neto sa baba tas icomment/ delete yung sa taas, thankss
-        also make sure na everything is disabled, set to unspecified at naka disallow yung sa policies para gumana */
 
 test('Test each section of the poliicy', async ({page}) =>  {
     let response

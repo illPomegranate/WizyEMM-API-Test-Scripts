@@ -1,15 +1,15 @@
 {
 	"allow_webpage_to_pdf": false,
-	"allow_facebook_sign_in": true,
-	"allow_dropbox": true,
-	"enable_optional_sign_in_screen": true,
-	"allow_document_cloud": true,
-	"enterprise_name": "automation test 3",
-	"allow_apple_sign_in": true,
-	"enable_printing": true,
-	"enable_copying": true,
-	"enable_in_app_purchases": true,
-	"allow_google_sign_in": true,
-	"allow_google_drive": true,
-	"allow_one_drive": true
+	"allow_facebook_sign_in": false,
+	"allow_dropbox": false,
+	"enable_optional_sign_in_screen": false,
+	"allow_document_cloud": false,
+	"enterprise_name": "automation test 8",
+	"allow_apple_sign_in": false,
+	"enable_printing": false,
+	"enable_copying": false,
+	"enable_in_app_purchases": false,
+	"allow_google_sign_in": false,
+	"allow_google_drive": false,
+	"allow_one_drive": false
 }
