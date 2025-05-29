@@ -31,7 +31,6 @@ test('Checking advanced tab in applications module', async ({page}) =>{
         await page.getByRole('link', { name: 'Advanced' }).first().click();
         await expect(await page.locator('body > div:nth-child(17) > div > div.ant-modal-wrap.ant-modal-centered > div > div.ant-modal-content')).toBeVisible()
 
-
         await page.locator('div').filter({ hasText: /^Default$/ }).nth(1).click();
         await page.getByTitle('Postponed').click();
 
@@ -62,7 +61,6 @@ test('Checking advanced tab in applications module', async ({page}) =>{
 
         const responseJSON = await response.request().postDataJSON()
 
-        // have to be specific kahit na wala sa intellisense
         //App is adobe acrobat
         console.log('Post Data: \n', responseJSON.data.attributes.applications[2])
 

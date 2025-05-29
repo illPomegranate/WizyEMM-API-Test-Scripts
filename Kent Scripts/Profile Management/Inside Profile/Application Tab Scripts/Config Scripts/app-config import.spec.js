@@ -2,11 +2,10 @@
 
 import {test, expect} from '@playwright/test'
 import { error } from 'console'
-test.setTimeout(300000)
 
 test('Import Config', async ({page}) =>{
    
-    console.log('Import Managed Config\n')
+    console.log('Importing Adobe Managed ConfigConfig\n')
     await test.step('Navigate to the application section', async () => {
 
         try {

@@ -35,7 +35,7 @@ test('Profile Management - Applications Tab (Installed Application)', async ({ p
 
     await test.step('Add an application', async () => {
            await page.getByRole('button', { name: 'plus Choose Applications' }).first().click();
-           await page.getByRole('row', { name: 'Adobe Acrobat Reader: Edit' }).getByLabel('').check();
+           await page.getByRole('row', { name: 'Google Chrome' }).getByLabel('').check();
            await page.getByRole('button', { name: 'OK' }).click(); 
            await page.getByRole('button', { name: 'save Save' }).click();
     
@@ -43,8 +43,18 @@ test('Profile Management - Applications Tab (Installed Application)', async ({ p
     
            console.log('Request Method : ', response.request().method())
            console.log('Status Code : ', response.status(), statusTexts(response.status()))
-           const postData = response.request().postDataJSON()
+           const postData = await response.request().postDataJSON()
            
-           console.log('Post Data: ', JSON.stringify(postData, null, 2), '\n')
+           console.log('Post Data: ', postData.data.attributes.applications[7])
        })
+
+    await test.step('Revert settings', async () =>{
+        
+       await page.getByRole('row', { name: 'Chrome' }).getByRole('checkbox').first().check()
+       await page.getByRole('button', { name: 'Remove Applications' }).click()
+       await page.getByRole('button', { name: 'Yes' }).click()
+
+       await page.getByRole('button', { name: 'save Save' }).click();
+        
+    })
 })

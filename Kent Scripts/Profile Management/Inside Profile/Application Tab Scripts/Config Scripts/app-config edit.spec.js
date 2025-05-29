@@ -2,10 +2,10 @@
 import {expect, test} from '@playwright/test'
 import { text } from 'stream/consumers'
 
-test('Modify managed Config', async ({page}) =>{
+test('Modify Adobe Acrobat Managed Config', async ({page}) =>{
     let num = 0
 
-    console.log('Modify Managed Config\n')
+    console.log('Modify Adobe Acrobat Managed Config\n')
     await test.step('Navigate to the application section', async () => {
 
         try {
@@ -21,8 +21,6 @@ test('Modify managed Config', async ({page}) =>{
         } catch (error) {
             console.log(error)
         }
-        
-    
     })
 
     await test.step('Open Config v2', async () =>{
@@ -45,8 +43,6 @@ test('Modify managed Config', async ({page}) =>{
 
             if ((await textBox.inputValue()) || !(await textBox.inputValue())){
                 num = increment((await textBox.inputValue()).match(/\d+/))
-                //console.log(typeof num)
-                //console.log(num)
 
                 await page.locator('#string-enterprise_name').click()
                 await page.locator('#string-enterprise_name').fill(name + num)
@@ -67,8 +63,6 @@ test('Modify managed Config', async ({page}) =>{
         } catch (error) {
             console.log(error)
         }
-        
-
     })
 
     await test.step('Get Proper Info', async () =>{
@@ -79,7 +73,6 @@ test('Modify managed Config', async ({page}) =>{
 
         const responseJSON = await response.request().postDataJSON()
 
-        // have to be specific kahit na wala sa intellisense
         //App is adobe acrobat
         console.log('Post Data: \n', responseJSON.data.attributes.applications[2])
 

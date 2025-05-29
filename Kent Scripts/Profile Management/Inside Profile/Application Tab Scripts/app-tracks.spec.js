@@ -32,11 +32,6 @@ test('Checking Tracks (Companion)', async ({page}) =>{
 
         expect( await page.locator('div.ant-modal-content').filter({hasText: 'Application Tracks'})).toBeVisible()
         
-        //await page.getByRole('radio', { name: 'Production' }).check();
-        //await page.getByRole('radio', { name: 'Gamma' }).check();
-        //await page.getByRole('radio', { name: 'alpha' }).check();
-        //await page.getByRole('radio', { name: 'Delta' }).check();
-
         await page.getByRole('radio', { name: 'alpha' }).check();
         await page.getByRole('button', { name: 'OK' }).click();
         await page.getByRole('button', { name: 'save Save' }).click();
@@ -54,17 +49,15 @@ test('Checking Tracks (Companion)', async ({page}) =>{
 
         const responseJSON = await response.request().postDataJSON()
 
-        // have to be specific kahit na wala sa intellisense
         //App is Companion
         console.log('Track ID: \n', responseJSON.data.attributes.applications[1].accessibleTrackIds)
     
     })
-
     await test.step('revert test', async () =>{
 
-    await page.getByRole('link', { name: 'Tracks' }).nth(1).click();
-    await page.getByRole('radio', { name: 'Production' }).check();
-    await page.getByRole('button', { name: 'OK' }).click();
-    await page.getByRole('button', { name: 'save Save' }).click();
+        await page.getByRole('link', { name: 'Tracks' }).nth(1).click();
+        await page.getByRole('radio', { name: 'Production' }).check();
+        await page.getByRole('button', { name: 'OK' }).click();
+        await page.getByRole('button', { name: 'save Save' }).click();
     })
 })

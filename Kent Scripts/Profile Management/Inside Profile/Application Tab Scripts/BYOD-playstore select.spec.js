@@ -1,6 +1,5 @@
 //@ts-check
 import{test, expect} from '@playwright/test'
-test.setTimeout(300000)
 
 //Script for Playstore Mode selection
 test('Test the Application section of profile', async ({page}) => {
