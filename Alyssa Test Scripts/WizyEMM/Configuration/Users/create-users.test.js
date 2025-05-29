@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { website, loginResponse, StatusMessage } from '../../utils/dataHelpers.js';
-import { createUsers } from '../../utils/advancedHelpers.js';
-
+import { website, loginResponse } from '../../utils/dataHelpers.js';
+import { createUser } from '../../utils/advancedHelpers.js';
 
 test('Dashboard', async ({ page }) => {
   const wizyEMM = await website(page, 'https://qa2.staging-us.wizyemm.app/', 'WizyEMM Staging Website');
@@ -21,7 +20,27 @@ test('Dashboard', async ({ page }) => {
   await page.getByRole('link', { name: 'Users', exact: true }).click() //Users Tab
   await page.waitForTimeout(3000);
 
+  //Create Users
+  const userAccount = await createUser(page, {
+    username: '1317',
+    password: 'Gardenvilla18!',
+    firstName: 'Wizy',
+    lastName: 'Team',
+    email: 'ms.alycortez@gmail.com',
+    profileTitle: '000000-InternQATest',
+    customAttributes: ['SVT', 'Sebong', 'GoSe', 'Happy', 'Burstday']
+  });
+  expect(userAccount.status()).toBe(201);
+  expect(userAccount).toBeTruthy();
 
-
-
-});
+  const userAccount2 = await createUser(page, {
+    username: '202510wave',
+    password: 'Gardenvilla18!',
+    firstName: 'Wizy',
+    lastName: 'EMM',
+    email: 'ms.alycortez@gmail.com',
+    profileTitle: 'fm',
+    customAttributes: ['Intern', 'QA', ' ', 'Test', ' ']
+  });
+  expect(userAccount2.status()).toBe(201);
+  expect(userAccount2).toBeTruthy();
