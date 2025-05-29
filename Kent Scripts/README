@@ -1,1 +1,2 @@
 Script uses Storage state authenticaion, should be automated
+Run session.setup.ts first
