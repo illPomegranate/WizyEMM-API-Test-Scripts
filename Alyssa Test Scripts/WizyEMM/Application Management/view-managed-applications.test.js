@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { website, loginResponse, logLinkResponse } from '../../utils/dataHelpers.js';
+import { website, loginResponse, logLinkResponse } from '../utils/dataHelpers.js';
 
 test('Managed Applications', async ({ page }) => {
   const wizyEMM = await website(page, 'https://qa2.staging-us.wizyemm.app/', 'WizyEMM Staging Website');
